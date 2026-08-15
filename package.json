@@ -1,0 +1,23 @@
+{
+  "name": "radixrouter",
+  "version": "0.1.0",
+  "description": "Fast radix tree router",
+  "keywords": ["router", "radix", "trie", "routing", "http"],
+  "homepage": "https://github.com/ngrink/radixrouter#readme",
+  "bugs": { "url": "https://github.com/ngrink/radixrouter/issues" },
+  "repository": { "type": "git", "url": "git+https://github.com/ngrink/radixrouter.git" },
+  "license": "MIT",
+  "author": "ngrink",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "files": ["src"],
+  "sideEffects": false,
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "test": "node --test",
+    "test:watch": "node --test --watch",
+    "bench": "node bench/match.bench.js"
+  }
+}
