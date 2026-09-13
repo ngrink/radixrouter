@@ -2,22 +2,49 @@
   "name": "radixrouter",
   "version": "0.1.0",
   "description": "Fast radix tree router",
-  "keywords": ["router", "radix", "trie", "routing", "http"],
+  "keywords": [
+    "router",
+    "radix",
+    "trie",
+    "routing",
+    "http"
+  ],
   "homepage": "https://github.com/ngrink/radixrouter#readme",
-  "bugs": { "url": "https://github.com/ngrink/radixrouter/issues" },
-  "repository": { "type": "git", "url": "git+https://github.com/ngrink/radixrouter.git" },
+  "bugs": {
+    "url": "https://github.com/ngrink/radixrouter/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngrink/radixrouter.git"
+  },
   "license": "MIT",
   "author": "ngrink",
   "type": "module",
   "exports": {
-    ".": "./src/index.js"
+    ".": {
+      "types": "./src/router.d.ts",
+      "default": "./src/router.js"
+    }
   },
-  "files": ["src"],
+  "files": [
+    "src",
+    "CHANGELOG.md"
+  ],
   "sideEffects": false,
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "test": "node --test",
     "test:watch": "node --test --watch",
-    "bench": "node bench/match.bench.js"
-  }
+    "bench": "node bench/match.bench.js",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm test && npm run typecheck"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.2",
+    "find-my-way": "^9.8.0",
+    "typescript": "^5.9.3"
+  },
+  "types": "./src/router.d.ts"
 }
